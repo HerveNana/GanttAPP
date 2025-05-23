@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <script src="http://localhost:8097"></script>
+  <!-- 
+    METADONNEES PRINCIPALES
+    ========================
+    - UTF-8 pour le support multilingue
+    - Viewport responsive
+    - Thème de couleur PWA
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1976d2">
+  
+  <!-- 
+    PRELOAD DES RESSOURCES CRITIQUES
+    ================================
+    - Polices principales
+    - Logo de l'application
+  -->
+  <link rel="preload" href="/assets/fonts/roboto.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/images/logo.svg" as="image" type="image/svg+xml">
+
+  <title>Gantt Manager Pro</title>
+</head>
+<body>
+  <!-- 
+    CONTENEUR RACINE
+    ================
+    - Doit rester vide pour le montage React
+    - Le loader est géré par JavaScript
+  -->
+  <div id="root"></div>
+
+  <!-- 
+    SCRIPT D'ENTREE
+    ===============
+    - type="module" pour le support ES6
+    - crossorigin pour les erreurs CORS claires
+  -->
+  <script type="module" src="/src/main.js" crossorigin></script>
+</body>
+</html>
