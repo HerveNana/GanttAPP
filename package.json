@@ -1,0 +1,52 @@
+{
+  "name": "ganttapp",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/lab": "^7.0.0-beta.12",
+    "@mui/material": "^7.1.0",
+    "@tailwindcss/vite": "^4.1.5",
+    "axios": "^1.9.0",
+    "axios-retry": "^4.5.0",
+    "crypto-js": "^4.2.0",
+    "formik": "^2.4.6",
+    "formik-mui": "^5.0.0-alpha.1",
+    "immer": "^10.1.1",
+    "jwt-decode": "^4.0.0",
+    "notistack": "^3.0.2",
+    "prop-types": "^15.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-google-charts": "^5.2.1",
+    "react-router-dom": "^7.6.0",
+    "tailwindcss": "^4.1.5",
+    "yup": "^1.6.1",
+    "zustand": "^5.0.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@types/axios": "^0.9.36",
+    "@types/crypto-js": "^4.2.2",
+    "@types/jwt-decode": "^2.2.1",
+    "@types/node": "^22.15.17",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "vite": "^6.3.5",
+    "vite-plugin-environment": "^1.1.3"
+  }
+}
