@@ -18,6 +18,8 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { SnackbarProvider } from 'notistack';
+import PropTypes from 'prop-types';
+window.PropTypes = PropTypes;  // Forces global availability
 
 // Layouts (chargés immédiatement car critiques)
 import MainLayout from './layouts/MainLayout';
