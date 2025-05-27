@@ -1,44 +1,46 @@
 /**
  * COMPOSANT PRINCIPAL DE L'APPLICATION
  * ====================================
- * 
+ *
  * Responsabilités :
  * - Configuration globale de l'application
  * - Gestion des routes principales
  * - Initialisation des providers contextuels
  * - Intégration des composants de layout
- * 
+ *
  * Architecture :
  * - Utilise React Router v6 pour la navigation
  * - Intègre les contextes globaux (thème, authentification, etc.)
  * - Structure modulaire avec lazy loading
  */
 
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import { SnackbarProvider } from 'notistack';
-import PropTypes from 'prop-types';
-window.PropTypes = PropTypes;  // Forces global availability
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import { SnackbarProvider } from "notistack";
+import PropTypes from "prop-types";
+window.PropTypes = PropTypes; // Forces global availability
 
 // Layouts (chargés immédiatement car critiques)
-import MainLayout from './layouts/MainLayout';
-import AuthLayout from './layouts/AuthLayout';
+import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
 
 // Composants dynamiques (chargés à la demande)
-const ProjectDashboard = lazy(() => import('./modules/projects/views/Dashboard'));
-const GanttView = lazy(() => import('./modules/gantt/views/GanttView'));
-const LoginView = lazy(() => import('./modules/auth/views/LoginView'));
-const NotFoundView = lazy(() => import('./core/components/NotFound'));
+const ProjectDashboard = lazy(() =>
+  import("./modules/projects/views/Dashboard")
+);
+const GanttView = lazy(() => import("./modules/gantt/views/GanttView"));
+const LoginView = lazy(() => import("./modules/auth/views/LoginView"));
+const NotFoundView = lazy(() => import("./core/components/NotFound"));
 
 // Thème et configuration
-import appTheme from './styles/theme';
-import { AuthProvider } from './core/contexts/AuthContext';
-import LoadingOverlay from './core/components/LoadingOverlay';
+import appTheme from "./styles/theme";
+import { AuthProvider } from "./core/contexts/AuthContext";
+import LoadingOverlay from "./core/components/LoadingOverlay";
 
 /**
  * Fonction principale de l'application
- * 
+ *
  * Structure clé :
  * 1. Providers globaux (thème, notifications, auth)
  * 2. Système de routage principal
@@ -58,21 +60,11 @@ function App() {
       <CssBaseline /> {/* Normalise les styles cross-browser */}
       <SnackbarProvider
         maxSnack={3}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         autoHideDuration={3000}
       >
-/$$
-        <AuthProvider>
-          {/**
-           * SYSTEME DE ROUTAGE
-           * -------------------
-           * - BrowserRouter : Gère l'historique de navigation
-           * - Suspense : Gère le chargement asynchrone
-           * - Layouts : Structure visuelle des pages
-           */}
-*/
-          <BrowserRouter>
-		<AuthProvider>{}
+        <BrowserRouter>
+          <AuthProvider>
             <Suspense fallback={<LoadingOverlay />}>
               <Routes>
                 {/* Routes publiques */}
@@ -90,8 +82,8 @@ function App() {
                 <Route path="*" element={<NotFoundView />} />
               </Routes>
             </Suspense>
-          </BrowserRouter>
-        </AuthProvider>
+          </AuthProvider>
+        </BrowserRouter>
       </SnackbarProvider>
     </ThemeProvider>
   );
