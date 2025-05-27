@@ -13,6 +13,7 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types'; //added on mai 27th
 import { 
   CircularProgress,
   Backdrop,
