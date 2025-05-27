@@ -61,6 +61,7 @@ function App() {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         autoHideDuration={3000}
       >
+/$$
         <AuthProvider>
           {/**
            * SYSTEME DE ROUTAGE
@@ -69,7 +70,9 @@ function App() {
            * - Suspense : Gère le chargement asynchrone
            * - Layouts : Structure visuelle des pages
            */}
+*/
           <BrowserRouter>
+		<AuthProvider>{}
             <Suspense fallback={<LoadingOverlay />}>
               <Routes>
                 {/* Routes publiques */}
