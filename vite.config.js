@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
-import tailwindcss from '@tailwindcss/vite'
 import environment from 'vite-plugin-environment'
 import path from 'path'
 
@@ -8,12 +7,11 @@ import path from 'path'
 export default defineConfig({
   plugins: [
     react(),
-    tailwindcss(),
     environment(['VITE_CRYPTO_KEY'], {
-	defineOn: 'import.meta.env'
-	}) // List all env vars you need
+      defineOn: 'import.meta.env'
+    }) // List all env vars you need
   ],
- esbuild: {
+  esbuild: {
     loader: 'jsx', // Force le traitement JSX pour tous les fichiers .js
     include: /\.jsx?$/, // Applique à la fois .js et .jsx
     exclude: [], // Exclusions optionnelles
@@ -26,14 +24,18 @@ export default defineConfig({
       '@components': path.resolve(__dirname, './src/components'),
       '@core': path.resolve(__dirname, './src/core'),
       '@contexts': path.resolve(__dirname, './src/core/contexts'),
-      '@store': path.resolve(__dirname, './src/core/store')
+      '@store': path.resolve(__dirname, './src/core/stores')
     }
   },
-   optimizeDeps: {
+  optimizeDeps: {
     esbuildOptions: {
       loader: {
         '.js': 'jsx', // Traitement JSX pour les fichiers .js
       },
     },
+  },
+  server: {
+    port: 3000,
+    open: true,
   },
 })

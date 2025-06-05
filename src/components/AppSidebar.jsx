@@ -17,6 +17,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Menu as MenuIcon,
@@ -72,7 +73,7 @@ const AppSidebar = ({ mobileOpen, handleDrawerToggle }) => {
    */
   const navItems = [
     {
-      path: '/dashboard',
+      path: '/',
       label: 'Dashboard',
       icon: <DashboardIcon />,
       exact: true
@@ -80,9 +81,7 @@ const AppSidebar = ({ mobileOpen, handleDrawerToggle }) => {
     {
       path: '/projects',
       label: 'Projects',
-     /** icon: <ProjectsIcon />,
-     */
-      Icon: <Folder />,
+      icon: <Folder />,
       exact: false
     },
     {

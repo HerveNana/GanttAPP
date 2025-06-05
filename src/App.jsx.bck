@@ -50,7 +50,7 @@ function App() {
   return (
     /**
      * PROVIDERS GLOBAUX
-     * -----------------
+* -----------------
      * Ordre important des providers :
      * 1. ThemeProvider : Gère le design system Material-UI
      * 2. SnackbarProvider : Gère les notifications toast
@@ -90,3 +90,4 @@ function App() {
 }
 
 export default App;
+

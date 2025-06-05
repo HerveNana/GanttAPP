@@ -8,18 +8,30 @@
  * - Gère le container principal et le système de grille
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Box, CssBaseline, Toolbar } from '@mui/material';
 import AppHeader from '../components/AppHeader';
 import AppSidebar from '../components/AppSidebar';
 
 export default function MainLayout() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppHeader />
-      <AppSidebar />
+      <AppHeader 
+        onMenuClick={handleDrawerToggle}
+        title="Gantt App"
+      />
+      <AppSidebar 
+        mobileOpen={mobileOpen}
+        handleDrawerToggle={handleDrawerToggle}
+      />
       
       {/* Contenu principal */}
       <Box
@@ -27,7 +39,7 @@ export default function MainLayout() {
         sx={{
           flexGrow: 1,
           p: 3,
-          width: 'calc(100% - 240px)',
+          width: { sm: `calc(100% - 240px)` },
           minHeight: '100vh'
         }}
       >

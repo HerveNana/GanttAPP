@@ -12,7 +12,7 @@ import App from './App';
 import ErrorBoundary from './core/utils/ErrorBoundary';
 
 // Add this temporarily to main.jsx
-console.log('Crypto Key:', import.meta.env.VITE_CRYPTO_KEY); 
+console.log('Crypto Key:', import.meta.env.VITE_CRYPTO_KEY);
 
 // Configuration du rendu
 const container = document.getElementById('root');
